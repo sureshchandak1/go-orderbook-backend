@@ -11,8 +11,8 @@ func RegisterRoutes() http.Handler {
 
 	r := gin.Default()
 
-	r.POST("/signup", auth.Signup)
-	r.POST("/login", auth.Login)
+	r.POST("/v1/api/auth/signup", auth.Signup)
+	r.POST("/v1/api/auth/login", auth.Login)
 
 	return r
 }
