@@ -23,3 +23,22 @@ type SignUpResData struct {
 	Email    string `json:"email"`
 	MobileNo string `json:"mobileNo"`
 }
+
+type LoginReqDto struct {
+	LoginReqData `json:"data" validate:"required"`
+	BaseRequest  `json:"request" validate:"required"`
+}
+
+type LoginReqData struct {
+	Email    string `json:"email" validate:"required,email"`
+	Password string `json:"password" validate:"required"`
+}
+
+type LoginResDto struct {
+	BaseResponse `json:"response"`
+	LoginResData `json:"data"`
+}
+
+type LoginResData struct {
+	Token string `json:"token"`
+}
